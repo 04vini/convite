@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos à Pinacoteca?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #nao {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            display: none;
+        }
+
+        #bora {
+            display: none;
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vamos à Pinacoteca?</h1>
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+        <div id="message">Eu pago uma bebida caso seja ruim</div>
+        <button id="bora">Bora</button>
+    </div>
+
+    <script>
+        const naoButton = document.getElementById('nao');
+        const simButton = document.getElementById('sim');
+        const message = document.getElementById('message');
+        const boraButton = document.getElementById('bora');
+
+        naoButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - naoButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - naoButton.offsetHeight);
+
+            naoButton.style.left = `${x}px`;
+            naoButton.style.top = `${y}px`;
+        });
+
+        naoButton.style.position = 'absolute';
+        naoButton.style.left = '50%';
+        naoButton.style.top = '50%';
+        naoButton.style.transform = 'translate(-50%, -50%)';
+
+        simButton.addEventListener('click', () => {
+            message.style.display = 'block';
+            boraButton.style.display = 'inline-block';
+        });
+
+        boraButton.addEventListener('click', () => {
+            window.location.href = 'https://w.app/vps3ok';
+        });
+    </script>
+</body>
+</html>
+
